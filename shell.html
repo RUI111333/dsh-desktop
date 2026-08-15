@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>DeepSeek Harness</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; background: #0f1115; font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+
+    #titlebar {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      background: #0f1115;
+      color: #c9d1d9;
+      border-bottom: 1px solid #21262d;
+      -webkit-app-region: drag;
+      user-select: none;
+    }
+    #titlebar .brand {
+      display: flex; align-items: center; gap: 8px;
+      padding: 0 14px; font-size: 13px; font-weight: 500; letter-spacing: .2px;
+    }
+    #titlebar .brand img { width: 18px; height: 18px; filter: invert(1); }
+    #titlebar .spacer { flex: 1; }
+
+    #titlebar .controls { display: flex; height: 100%; -webkit-app-region: no-drag; }
+    #titlebar .controls button {
+      width: 46px; height: 40px;
+      border: none; background: transparent;
+      color: #c9d1d9; font-size: 14px; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background .12s ease;
+    }
+    #titlebar .controls button:hover { background: #21262d; }
+    #titlebar .controls button.close:hover { background: #e81123; color: #fff; }
+
+    #app { height: calc(100% - 40px); }
+    iframe { width: 100%; height: 100%; border: none; display: block; background: #0f1115; }
+  </style>
+</head>
+<body>
+  <div id="titlebar">
+    <div class="brand">
+      <img src="./assets/icon.svg" alt="" />
+      <span>DeepSeek Harness</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="controls">
+      <button id="btn-min" title="最小化" aria-label="最小化">&#8211;</button>
+      <button id="btn-max" title="最大化" aria-label="最大化">&#9633;</button>
+      <button id="btn-close" class="close" title="关闭" aria-label="关闭">&#10005;</button>
+    </div>
+  </div>
+  <div id="app">
+    <iframe id="app-frame" src="http://127.0.0.1:3080" allow="clipboard-read; clipboard-write; fullscreen"></iframe>
+  </div>
+
+  <script>
+    const ctrl = window.desktopControls || {};
+    document.getElementById('btn-min').addEventListener('click', () => ctrl.minimize());
+    document.getElementById('btn-max').addEventListener('click', () => ctrl.maximize());
+    document.getElementById('btn-close').addEventListener('click', () => ctrl.close());
+  </script>
+</body>
+</html>
