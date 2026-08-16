@@ -132,11 +132,6 @@ dsh-desktop/
 - `~/.dsh/.env`,或
 - `~/.dsh/.credentials.yaml`
 
-## 📝 更新说明
-
-- 标题栏从深色改为浅色 macOS 风格:左侧交通灯按钮(关闭 / 最小化 / 最大化),标题居中显示黑鲸鱼 logo(新增 `assets/whale.svg`)。
-- 移除对 reasonix 桌面端的参考说明。
-
 ## 📄 开源协议
 
 [MIT](./LICENSE),与 dsh 一致。
