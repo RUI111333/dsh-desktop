@@ -26,14 +26,12 @@
 
 <hr/>
 
-> 架构参考 [reasonix](https://github.com/esengine/DeepSeek-Reasonix) 桌面端的「壳 + 本地服务 + WebView」模式。
-
 ## ✨ 特性
 
 | 特性 | 说明 |
 |---|---|
 | 功能与 Web 版一致 | 窗口直接加载 dsh 的 Web UI,同一套前端、同一个后端 |
-| 无边框深色外壳 | 自定义标题栏,视觉风格对齐 reasonix |
+| 无边框浅色外壳 | 自定义标题栏,macOS 风格交通灯按钮 + 居中鲸鱼标题 |
 | 开箱即用 | 内置 `@deepseek-ai/dsh`,无需本地安装 / 构建 dsh |
 | 系统托盘 | 关闭按钮最小化到托盘,托盘菜单可退出 |
 | 单实例锁 | 重复启动只激活已有窗口,不重复拉起服务 |
@@ -133,6 +131,11 @@ dsh-desktop/
 - 环境变量 `DEEPSEEK_API_KEY`,或
 - `~/.dsh/.env`,或
 - `~/.dsh/.credentials.yaml`
+
+## 📝 更新说明
+
+- 标题栏从深色改为浅色 macOS 风格:左侧交通灯按钮(关闭 / 最小化 / 最大化),标题居中显示黑鲸鱼 logo(新增 `assets/whale.svg`)。
+- 移除对 reasonix 桌面端的参考说明。
 
 ## 📄 开源协议
 
